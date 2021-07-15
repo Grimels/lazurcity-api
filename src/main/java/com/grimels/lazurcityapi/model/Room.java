@@ -10,13 +10,16 @@ import javax.validation.constraints.NotBlank;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
-public class ClientDTO extends Auditable {
+public class Room extends Auditable {
 
     private Integer id;
 
     @NotBlank(message = "Field 'name' could not be empty.")
     private String name;
-    private String comment;
-    private String phoneNumber;
+    private String description;
+    @NotBlank(message = "Field 'type' could not be empty.")
+    private String type;
+
+    private Boolean isBusy;
 
 }

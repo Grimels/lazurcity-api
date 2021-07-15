@@ -1,19 +1,14 @@
-package com.grimels.lazurcityapi.model;
+package com.grimels.lazurcityapi.model.request;
 
-import com.grimels.lazurcityapi.model.base.Auditable;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @SuperBuilder
-public class RoomDTO extends Auditable {
-
-    private Integer id;
+public class CreateRoomRequest {
 
     @NotBlank(message = "Field 'name' could not be empty.")
     private String name;
@@ -24,7 +19,5 @@ public class RoomDTO extends Auditable {
     private Integer maxAdultsQuantity;
     @Min(value = 0, message = "Field 'maxChildrenQuantity' may not be less than 0.")
     private Integer maxChildrenQuantity;
-
-    private Boolean isBusy;
 
 }

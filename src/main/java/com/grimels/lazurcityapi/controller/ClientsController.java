@@ -1,6 +1,6 @@
 package com.grimels.lazurcityapi.controller;
 
-import com.grimels.lazurcityapi.model.ClientDTO;
+import com.grimels.lazurcityapi.model.Client;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +17,12 @@ import java.util.List;
 public interface ClientsController {
 
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
-    List<ClientDTO> getClients();
+    List<Client> getClients();
 
     @GetMapping(path = "/{clientId}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    ClientDTO getClient(@PathVariable("clientId") @NotNull int roomId);
+    Client getClient(@PathVariable("clientId") @NotNull int roomId);
 
     @PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
-    ClientDTO saveClient(@RequestBody @NotNull(message = "Request body may not be null.") ClientDTO clientCreationRequest);
+    Client saveClient(@RequestBody @NotNull(message = "Request body may not be null.") Client clientCreationRequest);
 
 }
