@@ -1,6 +1,7 @@
 package com.grimels.lazurcityapi.model;
 
 import com.grimels.lazurcityapi.model.base.Auditable;
+import com.grimels.lazurcityapi.model.projection.AccommodationProjection;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
@@ -21,5 +22,7 @@ public class Room extends Auditable {
     private String type;
 
     private Boolean isBusy;
+
+    private AccommodationProjection latestAccommodation;
 
 }

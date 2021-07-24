@@ -2,12 +2,7 @@ package com.grimels.lazurcityapi.controller;
 
 import com.grimels.lazurcityapi.model.Room;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -18,7 +13,7 @@ import java.util.Set;
 public interface RoomsController {
 
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
-    List<Room> getRooms();
+    List<Room> getRooms(@RequestParam(name = "isBusy", required = false) Boolean isBusy);
 
     @GetMapping(path = "/{roomId}", produces = {MediaType.APPLICATION_JSON_VALUE})
     Room getRoom(@PathVariable("roomId") @NotNull int roomId);
