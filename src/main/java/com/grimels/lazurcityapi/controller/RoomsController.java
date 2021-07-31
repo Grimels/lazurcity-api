@@ -13,7 +13,13 @@ import java.util.Set;
 public interface RoomsController {
 
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
-    List<Room> getRooms(@RequestParam(name = "isBusy", required = false) Boolean isBusy);
+    List<Room> getRooms();
+
+    @GetMapping(path = "/free", produces = {MediaType.APPLICATION_JSON_VALUE})
+    List<Room> getFreeRooms();
+
+    @GetMapping(path = "/busy", produces = {MediaType.APPLICATION_JSON_VALUE})
+    List<Room> getBusyRooms();
 
     @GetMapping(path = "/{roomId}", produces = {MediaType.APPLICATION_JSON_VALUE})
     Room getRoom(@PathVariable("roomId") @NotNull int roomId);
