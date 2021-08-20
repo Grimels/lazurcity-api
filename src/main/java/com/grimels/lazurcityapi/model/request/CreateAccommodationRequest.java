@@ -5,7 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @SuperBuilder
@@ -17,9 +17,9 @@ public class CreateAccommodationRequest {
     @NotNull(message = "Field 'price' may not be null.")
     private Double price;
     private Boolean isFinal;
-    private Date startDate;
+    private LocalDate startDate;
     @NotNull(message = "Field 'endDate' may not be null.")
-    private Date endDate;
+    private LocalDate endDate;
     @Min(value = 0, message = "Field 'quantity' may not be less than 0.")
     private Integer quantity;
 

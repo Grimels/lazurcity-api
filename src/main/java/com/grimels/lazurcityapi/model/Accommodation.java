@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDate;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -23,9 +23,9 @@ public class Accommodation extends Auditable {
     private Double price;
     private Boolean isFinal;
     @Value(value = "#{new java.util.Date()}")
-    private Date startDate;
+    private LocalDate startDate;
     @NotNull(message = "Field 'endDate' may not be null.")
-    private Date endDate;
+    private LocalDate endDate;
     @Min(value = 0, message = "Field 'quantity' may not be less than 0.")
     private Integer quantity;
 

@@ -5,14 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @Data
 @SuperBuilder
 public class Auditable {
 
-    private Date createdDate;
-    private Date modifiedDate;
+    private LocalDate createdDate;
+    private LocalDate modifiedDate;
 
 }
