@@ -17,6 +17,9 @@ public class AccommodationInfo {
     private Integer daysLeft;
 
     private Client client;
+    private String roomName;
+    private Integer roomId;
+    private Integer quantity;
     private Double price;
 
 }

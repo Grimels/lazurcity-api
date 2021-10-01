@@ -1,6 +1,7 @@
 package com.grimels.lazurcityapi.model;
 
 import com.grimels.lazurcityapi.model.base.Auditable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
