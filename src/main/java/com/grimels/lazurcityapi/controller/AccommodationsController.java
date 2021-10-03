@@ -4,6 +4,7 @@ import com.grimels.lazurcityapi.model.Accommodation;
 import com.grimels.lazurcityapi.model.history.RoomAccommodationsHistory;
 import com.grimels.lazurcityapi.model.request.CreateAccommodationRequest;
 import com.grimels.lazurcityapi.model.request.UpdateAccommodationRequest;
+import com.grimels.lazurcityapi.model.statistics.AccommodationStatistics;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -39,5 +40,10 @@ public interface AccommodationsController {
 
     @DeleteMapping(path = "/{accommodationId}")
     void deleteAccommodation(@PathVariable(name = "accommodationId") Integer accommodationId);
+
+    @GetMapping(path = "/statistics/from/{startDate}/to/{endDate}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    AccommodationStatistics getStatistics(@PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+                                          @PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
+                                          @RequestParam(name = "date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date);
 
 }
