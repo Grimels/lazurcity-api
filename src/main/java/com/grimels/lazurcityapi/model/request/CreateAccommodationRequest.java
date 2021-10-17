@@ -28,5 +28,6 @@ public class CreateAccommodationRequest {
     private LocalDate endDate;
     @Min(value = 0, message = "Field 'quantity' may not be less than 0.")
     private Integer quantity;
+    private String comment;
 
 }

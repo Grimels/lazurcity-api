@@ -19,5 +19,8 @@ public class UpdateAccommodationRequest {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate endDate;
     private Integer quantity;
+    private String clientName;
+    private String clientPhoneNumber;
+    private String comment;
 
 }
