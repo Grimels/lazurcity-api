@@ -17,6 +17,7 @@ public class AccommodationStatistics {
     private Long dailyIncome;
     private Integer freeRooms;
     private Integer busyRooms;
+    private Long totalSeasonIncome;
 
     private Map<String, Long> seasonIncomeByRoomName;
     private Map<String, Long> seasonIncomeByRoomCategory;

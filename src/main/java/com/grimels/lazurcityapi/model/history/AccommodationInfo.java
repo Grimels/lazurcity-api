@@ -21,5 +21,6 @@ public class AccommodationInfo {
     private Integer roomId;
     private Integer quantity;
     private Double price;
+    private Boolean isFinal;
 
 }
