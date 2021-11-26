@@ -8,15 +8,25 @@
         <version>2.5.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.grimels</groupId>
     <artifactId>lazurcity-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>LazurCity :: API</name>
-    <packaging>jar</packaging>
     <description>Hotel Management System :: API</description>
+    <name>LazurCity :: API</name>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
     <properties>
         <java.version>16</java.version>
+        <lombok.version>1.18.20</lombok.version>
+        <spring.boot.starter.validation.version>2.5.0</spring.boot.starter.validation.version>
     </properties>
+
+    <scm>
+        <developerConnection>scm:git:git@github.com:Grimels/lazurcity-api.git</developerConnection>
+        <connection>scm:git:git@github.com:Grimels/lazurcity-api.git</connection>
+        <tag>${project.version}</tag>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -27,21 +37,25 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
-            <version>2.5.0</version>
+            <version>${spring.boot.starter.validation.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>28.2-jre</version>
+            <version>${lombok.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M4</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
